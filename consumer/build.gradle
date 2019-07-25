@@ -1,0 +1,39 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.jjdev'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    compile 'org.projectlombok:lombok'
+    compile 'org.springframework.cloud:spring-cloud-starter-aws:2.1.1.RELEASE'
+    compile 'org.springframework.cloud:spring-cloud-starter-aws-messaging:2.1.1.RELEASE'
+    compile 'com.amazonaws:aws-java-sdk-dynamodb:1.11.34'
+    compile 'com.github.derjust:spring-data-dynamodb:5.0.3'
+    compile "io.springfox:springfox-swagger2:2.9.2"
+    compile "io.springfox:springfox-swagger-ui:2.9.2"
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
