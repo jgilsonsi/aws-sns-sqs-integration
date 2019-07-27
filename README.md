@@ -25,5 +25,7 @@ This project uses:
   
   Lombok
   
+  Swagger
+  
   AWS SDK
 
